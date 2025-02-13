@@ -1,0 +1,6 @@
+@EccomerceApiCleanArchitecture_HostAddress = http://localhost:5053
+
+GET {{EccomerceApiCleanArchitecture_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
