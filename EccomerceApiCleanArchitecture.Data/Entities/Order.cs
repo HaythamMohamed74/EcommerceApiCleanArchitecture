@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using EccomerceApiCleanArchitecture.Common.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EccomerceApiCleanArchitecture.Data.Entities
@@ -25,7 +26,7 @@ namespace EccomerceApiCleanArchitecture.Data.Entities
         [ForeignKey("OrderAddress")]
         public  int OrderAddressId { get; set; }
         [Required]
-        //public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
+        public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
 
         public DateTime OrderDate { get; set; } = DateTime.Now;
 

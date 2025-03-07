@@ -14,7 +14,7 @@ namespace EccomerceApiCleanArchitecture.Data.Configurations
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.HasIndex(p => p.Name);
-            //builder.Property(p => p.Status).HasConversion<string>();
+            builder.Property(p => p.Status).HasConversion<string>();
         }
     }
 }

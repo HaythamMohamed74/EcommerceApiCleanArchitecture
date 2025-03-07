@@ -1,4 +1,5 @@
 ﻿using EccomerceApiCleanArchitecture.Data.Entities;
+using EccomerceApiCleanArchitecture.Infrastructure.InfrastructureBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace EccomerceApiCleanArchitecture.Infrastructure.Abstracts
 {
-    public interface IProductRepository
+    public interface IProductRepository:IGenericRepositoryAsync<Product>
     {
-       Task <List<Product>> GetAllProductsAsync();
+       
+        //Task<Product> GetProductByNameAsync(string name);
+
     }
 }

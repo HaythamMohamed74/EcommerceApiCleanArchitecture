@@ -14,7 +14,7 @@ namespace EccomerceApiCleanArchitecture.Data.Configurations
         public void Configure(EntityTypeBuilder<Order> builder)
         {
             builder.HasIndex(o => o.OrderNumber).IsUnique();
-            //builder.Property(o => o.OrderStatus).HasConversion<string>();
+            builder.Property(o => o.OrderStatus).HasConversion<string>();
         }
     }
 }

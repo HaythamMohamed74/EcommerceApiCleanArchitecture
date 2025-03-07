@@ -1,4 +1,5 @@
 ﻿using EccomerceApiCleanArchitecture.Infrastructure.Abstracts;
+using EccomerceApiCleanArchitecture.Infrastructure.InfrastructureBase;
 using EccomerceApiCleanArchitecture.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -13,8 +14,10 @@ namespace EccomerceApiCleanArchitecture.Infrastructure
     {
         public static void AddInfastuctureDependencies(this IServiceCollection services) { 
             services.AddScoped<IProductRepository, ProductRepository>();
-            
-        
+            services.AddScoped<ICategoryRepository, CategoryRepository>(); 
+            services.AddScoped(typeof (IGenericRepositoryAsync<>),typeof( GenericRepositoryAsync<>));
+
+
         }
     }
 }

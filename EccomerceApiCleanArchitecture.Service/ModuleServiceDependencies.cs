@@ -13,6 +13,7 @@ namespace EccomerceApiCleanArchitecture.Service
         public static void AddServiceDependencies(this IServiceCollection services)
         {
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICategoryService, CategoryService>();
             
         }
     }

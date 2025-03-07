@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using EccomerceApiCleanArchitecture.Common.Enums;
 namespace EccomerceApiCleanArchitecture.Data.Entities
 {
     public class Product: BaseEntity
@@ -27,7 +28,7 @@ namespace EccomerceApiCleanArchitecture.Data.Entities
         public decimal? DiscountPrice { get; set; }
 
         [Required]
-        //public ProductStatus Status { get; set; } = ProductStatus.Draft;
+        public ProductStatus Status { get; set; } = ProductStatus.Draft;
 
         [ForeignKey("Category")]
         public int CategoryId { get; set; }

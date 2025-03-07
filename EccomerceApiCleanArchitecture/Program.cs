@@ -25,7 +25,7 @@ namespace EccomerceApiCleanArchitecture
             #region CORS
             builder.Services.AddCors(c =>
             {
-                c.AddDefaultPolicy( options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                c.AddPolicy("AllowAll", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             });
             #endregion
             builder.Services.AddInfastuctureDependencies();
@@ -33,9 +33,6 @@ namespace EccomerceApiCleanArchitecture
             builder.Services.AddCoreDependencies();
 
             //builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
-
-
-
             //builder.Services.AddScoped<IProductRepository,ProductRepository >();
             //builder.Services.AddScoped<IProductService,ProductService>();
             builder.Services.AddControllers();
@@ -55,7 +52,7 @@ namespace EccomerceApiCleanArchitecture
 
             app.UseHttpsRedirection();
 
-            app.UseCors();
+            app.UseCors("AllowAll");
             app.UseAuthorization();
 
 
